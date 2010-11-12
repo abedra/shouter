@@ -1,0 +1,9 @@
+#!/bin/sh
+
+CLASSPATH=src:resources
+
+for jar in lib/*.jar; do
+    CLASSPATH=$CLASSPATH:$jar
+done
+
+java -cp $CLASSPATH clojure.main -e "(use 'shouter.main) (-main)"

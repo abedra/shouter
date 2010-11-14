@@ -1,10 +1,12 @@
 (ns shouter.views.shouts
   (:use [hiccup.core :only [html]]
         [hiccup.page-helpers :only [doctype]]
-        [hiccup.form-helpers :only [form-to label text-area submit-button]]))
+        [hiccup.form-helpers :only [form-to label text-area submit-button]])
+  (:require [shouter.views.layout :as layout]))
 
 (defn shout-form
   []
+  [:div {:id "shout-form"}]
   (form-to [:post "/"]
            (label "shout" "What do you want to SHOUT?") [:br]
            (text-area "shout")
@@ -19,11 +21,4 @@
 
 (defn index
   [shouts]
-  (html
-   (doctype :html5)
-   [:head
-    [:title "Shouter"]]
-   [:body
-    [:div {:id "content"}
-     (shout-form)
-     (display-shouts shouts)]]))
+  (layout/application "SHOUTER" (shout-form) (display-shouts shouts)))

@@ -21,4 +21,6 @@
 
 (defn index
   [shouts]
-  (layout/application "SHOUTER" (shout-form) (display-shouts shouts)))
+  (layout/common "SHOUTER"
+                 (shout-form)
+                 (display-shouts shouts)))

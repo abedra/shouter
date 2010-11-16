@@ -12,11 +12,15 @@
            (text-area "shout")
            (submit-button "SHOUT!")))
 
+(defn display-shout
+  [shout]
+  [:div {:class "shout"} (:body shout)])
+
 (defn display-shouts
   [shouts]
   [:div {:id "shouts"}
    (map
-    (fn [shout] [:div {:class "shout"} (:body shout)])
+    (fn [shout] (display-shout shout))
     shouts)])
 
 (defn index

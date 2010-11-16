@@ -12,7 +12,7 @@
   []
   (with-connection db
     (with-query-results results
-      ["select * from shouts"]
+      ["select * from shouts order by id desc"]
       (into [] results))))
 
 (defn create

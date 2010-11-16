@@ -39,4 +39,4 @@ h1 span a:hover { opacity: 1; }
 #shout-form { margin: 0 auto; width: 600px; }
 #shout { width: 500px; }
 #shouts { margin-top: 10px; width: 500px; background-color: #fff;}
-.shout { padding: 15px; border-bottom: 1px solid #999; }
+.shout { padding: 15px; border-bottom: 1px solid #999; text-transform: uppercase; }

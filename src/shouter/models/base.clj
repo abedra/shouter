@@ -1,5 +1,5 @@
 (ns shouter.models.base
-  (:use [clojure.contrib.sql :only [with-connection create-table]]))
+  (:require [clojure.java.jdbc :as sql]))
 
 (let [db-host "localhost"
       db-port "5432"
@@ -8,10 +8,9 @@
            :subprotocol "postgresql"
            :subname (str "//" db-host ":" db-port "/" db-name)}))
 
-(defn create-shouter-db
-  []
-  (with-connection db
-    (create-table :shouts
-                  [:id :serial "PRIMARY KEY"]
-                  [:body :varchar "NOT NULL"]
-                  [:created_at :timestamp "NOT NULL" "DEFAULT CURRENT_TIMESTAMP"])))
+(defn create-shouter-db []
+  (sql/with-connection db
+    (sql/create-table :shouts
+                      [:id :serial "PRIMARY KEY"]
+                      [:body :varchar "NOT NULL"]
+                      [:created_at :timestamp "NOT NULL" "DEFAULT CURRENT_TIMESTAMP"])))

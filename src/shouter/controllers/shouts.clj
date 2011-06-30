@@ -1,17 +1,16 @@
 (ns shouter.controllers.shouts
-  (:use [ring.util.response :only [redirect]]
-        [compojure.core :only [defroutes GET POST]])
-  (:require [shouter.views.shouts :as view]
+  (:use [compojure.core :only [defroutes GET POST]])
+  (:require [ring.util.response :as ring]
+            [shouter.views.shouts :as view]
             [shouter.models.shout :as model]))
 
-(defn index
-  []
+(defn index []
   (view/index (model/all)))
 
 (defn create
   [params]
   (model/create (:shout params))
-  (redirect "/"))
+  (ring/redirect "/"))
 
 (defroutes routes
   (GET  "/" [] (index))

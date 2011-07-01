@@ -13,6 +13,10 @@
 
 (def application (handler/site routes))
 
-(defn start []
-  (ring/run-jetty (var application) {:port 8080
+(defn start [port]
+  (ring/run-jetty (var application) {:port (or port 8080)
                                      :join? false}))
+
+(defn -main []
+  (let [port (Integer/parseInt (System/getenv "PORT"))]
+    (start port)))

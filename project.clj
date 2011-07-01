@@ -7,4 +7,5 @@
                  [compojure "0.6.3"]
                  [hiccup "0.3.5"]]
   :dev-dependencies [[swank-clojure "1.2.1"]]
+  :main shouter.main
   :repositories {"sonatype-oss-public" "https://oss.sonatype.org/content/groups/public/"})

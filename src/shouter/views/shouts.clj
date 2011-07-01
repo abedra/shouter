@@ -5,17 +5,17 @@
   (:require [shouter.views.layout :as layout]))
 
 (defn shout-form []
-  [:div {:id "shout-form"}]
-  (form-to [:post "/"]
-           (label "shout" "What do you want to SHOUT?") [:br]
-           (text-area "shout")
-           (submit-button "SHOUT!")))
+  [:div {:id "shout-form" :class "sixteen columns alpha omega"}
+   (form-to [:post "/"]
+            (label "shout" "What do you want to SHOUT?") 
+            (text-area "shout")
+            (submit-button "SHOUT!"))])
 
 (defn display-shout [shout]
-  [:div {:class "shout"} (:body shout)])
+  [:h2 {:class "shout"} (:body shout)])
 
 (defn display-shouts [shouts]
-  [:div {:id "shouts"}
+  [:div {:id "shouts sixteen columns alpha omega"}
    (map
     (fn [shout] (display-shout shout))
     shouts)])
@@ -23,4 +23,5 @@
 (defn index [shouts]
   (layout/common "SHOUTER"
                  (shout-form)
+                 [:div {:class "clear"}]
                  (display-shouts shouts)))

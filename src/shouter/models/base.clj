@@ -9,7 +9,7 @@
         database-name (last (str/split (str url) #"/"))]
     {:username (first user-info)
      :password (second user-info)
-     :subname (str "//" (.getHost url) ":" (.getPort url) "/" database-name)}))
+     :subname (str "//" (.getHost url) ":5432/" database-name)}))
 
 (let [resource (database-resource)]
   (def db {:classname "org.postgresql.Driver"

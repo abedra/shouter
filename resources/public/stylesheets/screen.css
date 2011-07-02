@@ -1,42 +1,231 @@
-/*=====================
-    RESET
-=====================*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
-body {line-height: 1;}
-ol, ul {list-style: none;}
-blockquote, q {quotes: none;}
-blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
-/* remember to define focus styles! */
-:focus {outline: 0;}
-/* remember to highlight inserts somehow! */
-ins {text-decoration: none;}
-del {text-decoration: line-through;}
-/* tables still need 'cellspacing="0"' in the markup */
-table {border-collapse: collapse; border-spacing: 0;}
+/* 
+* Skeleton V1.0
+* Created by Dave Gamache
+* www.getskeleton.com
+* 5/15/2011
+*/
+/* #Site Styles
+================================================== */
+::selection {
+  background: #f977eb;
+}
+::-moz-selection {
+  background: #f977eb;
+}
 
-/*======================
-    STYLES
-======================*/
-body { font-size: 62.5%; font-family: Helvetica, Arial, sans-serif; background: #ebebeb; }
-a { color: #36c; text-decoration: none; font-style: normal; }
-#content, #footer { width: 700px; margin: 0 auto; }
-#header { background: #333; height: 50px; border-bottom: 1px solid #fff; }
-#content { padding: 30px 50px; }
-h1 { width: 960px; margin: 0 auto; color: #fff; font-weight: normal; font-size: 18px; line-height: 50px; }
-h1 span { margin-left: 0.6em; padding: 0.4em 0.6em; border-left: solid 1px #414141; }
-h1 span a { color: #fff; opacity: 0.25; -webkit-transition-duration: .20s; -webkit-transition-property: opacity; -moz-transition-duration: .20s; -moz-transition-property: opacity; }
-h1 span a#home { color: transparent; background: transparent url(/images/home.png) 0 0 no-repeat; text-indent: -9999px; }
-h1 span a:hover { opacity: 1; }
-#greeting { font-size: 2.0em; }
-#shout-form { margin: 0 auto; width: 600px; }
-#shout { width: 500px; }
-#shouts { margin-top: 10px; width: 500px; background-color: #fff;}
-.shout { padding: 15px; border-bottom: 1px solid #999; text-transform: uppercase; }
+html {
+  height: 100%;
+  padding-bottom: 1px;
+}
+body { 
+  font-size: 62.5%; 
+  font-family: Helvetica, Arial, sans-serif; 
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, rgb(46,74,104)),
+      color-stop(1, rgb(55,84,114))
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      rgb(46,74,104) 0%,
+      rgb(55,84,114) 100%
+  );
+  height: 100%;
+}
+a { 
+  color: #36c; 
+  text-decoration: none; 
+  font-style: normal; 
+}
+#header { 
+  background: #2c4663; 
+  height: 50px; 
+  border-bottom: 1px solid #5178a2; 
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  padding: 20px 0;
+}
+#header h1 {
+  color: #fff;
+  text-shadow: 0 1px 0 #ccc, 
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+  font-family: 'Sigmar One', arial, serif;
+  font-weight: bold;
+  letter-spacing: -1px;
+  text-align: center;
+  background: url(/images/megaphone.png) 33% 10px no-repeat;
+}
+h1 span { 
+  margin-left: 0.6em; 
+  padding: 0.4em 0.6em; 
+  border-left: solid 1px #414141; 
+}
+h1 span a { 
+  color: #fff; 
+  opacity: 0.25; -webkit-transition-duration: .20s; -webkit-transition-property: opacity; -moz-transition-duration: .20s; -moz-transition-property: opacity; 
+}
+#content {
+
+}
+#content form {
+  width: 80%; 
+  margin: 20px auto;
+  padding: 15px; 
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(1, rgb(46,74,104)),
+      color-stop(0, rgb(55,84,114))
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      rgb(46,74,104) 100%,
+      rgb(55,84,114) 0%
+  );
+  border-radius: 20px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+  
+}
+#content form textarea { 
+  width: 80%;
+  margin: 0 auto;
+  font-size: 18px;
+  font-family: georgia;
+  border-radius: 8px;
+}
+#content form label {
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #ccc, 
+                 0 1px 0 #c9c9c9,
+                 0 1px 1px #bbb,
+                 0 2px 0 #b9b9b9,
+                 0 2px 0 #aaa,
+                 0 3px 1px rgba(0,0,0,.1),
+                 0 0 3px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.2),
+                 0 3px 5px rgba(0,0,0,.25),
+                 0 5px 5px rgba(0,0,0,.2),
+                 0 10px 10px rgba(0,0,0,.15);
+}
+#content form input[type="submit"] {
+  background: #7FBF4D;
+  background: -moz-linear-gradient(top, #7FBF4D 0%, #63A62F 100%);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7FBF4D), to(#63A62F));
+  border: 1px solid #63A62F;
+  border-bottom: 1px solid #5B992B;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -moz-box-shadow: inset 0 1px 0 0 #96CA6D;
+  -webkit-box-shadow: inset 0 1px 0 0 #96CA6D;
+  box-shadow: inset 0 1px 0 0 #96CA6D;
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  font-weight: bold;
+  line-height: 1;
+  padding: 17px 0 18px 0;
+  text-align: center;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.75);
+  width: 300px;
+  margin: 20px auto;
+  display: block;
+}
+#content form input[type="submit"]:hover {
+  background: #76b347;
+  background: -moz-linear-gradient(top, #76b347 0%, #5e9e2e 100%);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#76b347), to(#5e9e2e));
+  -moz-box-shadow: inset 0 1px 0 0 #8dbf67;
+  -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
+  box-shadow: inset 0 1px 0 0 #8dbf67;
+  cursor: pointer;
+}
+
+#content form input[type="submit"]:active {
+  border: 1px solid #5b992b;
+  border-bottom: 1px solid #538c27;
+  -moz-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #7499c2;
+  -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #7499c2;
+  box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #7499c2;
+
+}
+
+.shout { 
+  padding: 15px;
+  text-transform: uppercase; 
+  width: 50%; 
+  margin: 10px auto;
+  background: #fff;
+  border-radius: 8px;
+}
+
+/* #Page Styles
+================================================== */
+
+/* #Media Queries
+================================================== */
+	
+	/* Anything smaller than standard 960 */
+	@media only screen and (max-width: 959px) {
+    #content form {
+      width: auto;
+      margin-top: 0;      
+    }
+    .shout {
+      width: auto;
+    }
+	  #header h1 {
+	    background: url(/images/megaphone.png) 28% 10px no-repeat;
+	  }
+	}
+	
+	/* Mobile/Browser */
+	@media only screen and (max-width: 767px) {
+	  #header h1 {
+	    background: url(/images/megaphone.png) 8% 10px no-repeat;
+	  }
+	}
+	/* iPhone & Android portrait */
+	@media only screen and (max-width: 480px) {
+	  #header h1 {
+	    background: url(/images/megaphone.png) 10px 10px no-repeat;
+	    font-size: 36px;
+	    text-align: left;
+	    padding-left: 60px;
+	    width: auto;
+	  }
+	  #content form input[type="submit"] {
+	    width: 90%;
+	    padding: 7px 0 8px 0;
+	    margin: 10px auto;
+	  }
+	  #content form label {
+	    font-size: 18px;
+	  }
+	  #content form {
+	    padding: 5px;
+	    margin-top: 10px;
+	    margin-bottom: 5px;
+	  }
+	  .shout:first-child {
+      margin: 0;
+    }
+	}

@@ -15,5 +15,5 @@
   (def db {:classname "org.postgresql.Driver"
            :subprotocol "postgresql"
            :subname (:subname resource)
-           :username (:username resource)
+           :user (:username resource)
            :password (:password resource)}))

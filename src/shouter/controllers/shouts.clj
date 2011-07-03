@@ -9,7 +9,8 @@
 
 (defn create
   [params]
-  (model/create (:shout params))
+  (when-let [shout (:shout params)]
+    (model/create shout))
   (ring/redirect "/"))
 
 (defroutes routes

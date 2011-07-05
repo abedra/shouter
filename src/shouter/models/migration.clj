@@ -10,6 +10,6 @@
                       [:created_at :timestamp "NOT NULL" "DEFAULT CURRENT_TIMESTAMP"])))
 
 (defn -main []
-  (print "Creating database structure...") (flush)
+  (print "Migrating database...") (flush)
   (create-shouts)
   (println " done"))

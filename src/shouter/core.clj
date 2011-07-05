@@ -1,4 +1,4 @@
-(ns shouter.main
+(ns shouter.core
   (:use [compojure.core :only [defroutes]])
   (:require [compojure.route :as route]
             [compojure.handler :as handler]

@@ -8,8 +8,7 @@
 (defn index []
   (view/index (model/all)))
 
-(defn create
-  [params]
+(defn create [params]
   (let [shout (:shout params)]
     (when-not (str/blank? shout)
       (model/create shout)))

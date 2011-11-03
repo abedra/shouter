@@ -1,9 +1,8 @@
 (ns shouter.models.migration
-  (:use [shouter.models.base :only (db)])
   (:require [clojure.java.jdbc :as sql]))
 
 (defn create-shouts []
-  (sql/with-connection db
+  (sql/with-connection (System/getenv "DATABASE_URL")
     (sql/create-table :shouts
                       [:id :serial "PRIMARY KEY"]
                       [:body :varchar "NOT NULL"]

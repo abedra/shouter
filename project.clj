@@ -9,4 +9,5 @@
                  [ring/ring-jetty-adapter "1.1.6"]
                  [compojure "1.1.3"]
                  [hiccup "1.0.2"]]
-  :main shouter.core)
+  :main shouter.core
+  :aot [shouter.core])

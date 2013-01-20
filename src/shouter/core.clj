@@ -4,7 +4,9 @@
   (:require [compojure.route :as route]
             [compojure.handler :as handler]
             [shouter.controllers.shouts :as shouts]
-            [shouter.views.layout :as layout]))
+            [shouter.views.layout :as layout]
+            [shouter.models.migration :as schema])
+  (:gen-class))
 
 (defroutes routes
   shouts/routes
@@ -18,6 +20,7 @@
                           :join? false}))
 
 (defn -main []
+  (schema/migrate)
   (let [port (Integer/parseInt (or (System/getenv "PORT") "8080"))]
     (start port)))
  

@@ -1,13 +1,12 @@
 (ns shouter.views.shouts
-  (:use [hiccup.core :only [html h]]
-        [hiccup.page-helpers :only [doctype]]
-        [hiccup.form-helpers :only [form-to label text-area submit-button]])
+  (:use [hiccup.core :only (h)]
+        [hiccup.form :only (form-to label text-area submit-button)])
   (:require [shouter.views.layout :as layout]))
 
 (defn shout-form []
   [:div {:id "shout-form" :class "sixteen columns alpha omega"}
    (form-to [:post "/"]
-            (label "shout" "What do you want to SHOUT?")
+            (label "shout" "What do you want to SHOUT?") 
             (text-area "shout")
             (submit-button "SHOUT!"))])
 

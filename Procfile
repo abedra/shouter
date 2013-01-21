@@ -1,1 +1,1 @@
-web: lein run -m shouter.core
+web: lein trampoline run

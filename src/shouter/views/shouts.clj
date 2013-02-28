@@ -11,7 +11,7 @@
             (submit-button "SHOUT!"))])
 
 (defn display-shouts [shouts]
-  [:div {:id "shouts sixteen columns alpha omega"}
+  [:div {:class "shouts sixteen columns alpha omega"}
    (map
     (fn [shout] [:h2 {:class "shout"} (h (:body shout))])
     shouts)])

@@ -23,4 +23,3 @@
   (schema/migrate)
   (let [port (Integer/parseInt (or (System/getenv "PORT") "8080"))]
     (start port)))
- 
